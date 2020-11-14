@@ -12,9 +12,25 @@
 
 ![查看端口占用情况](http://www.xitongzhijia.net/uploads/allimg/190513/66-1Z513163111-52-water.jpg "查看端口占用情况")
 
+## 根据端口号查看进程
 
+`netstat -ano | findstr "6942"
 
-在任务管理器中，根据PID就可以查看对应的进程信息。
+```powershell
+C:\Users\John>netstat -ano | findstr "6942"
+  TCP    127.0.0.1:6942     0.0.0.0:0       LISTENING       15904
+```
+
+## 根据PID查看进程名称
+
++ 在任务管理器中，根据PID就可以查看对应的进程信息。
 
 ![在任务管理器中查看进程信息](http://www.xitongzhijia.net/uploads/allimg/190513/66-1Z513163110-water.jpg "在任务管理器中查看进程信息")
+
++ 使用命令`tasklist | findstr 15904`
+
+```powershell
+C:\Users\John>tasklist | findstr 15904
+python.exe           15904 Console         1      9,496 K
+```
 
